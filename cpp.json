@@ -1,0 +1,199 @@
+{
+  "bfs": {
+    "prefix": "bfs",
+    "body": "queue<P> q;\r\nll d[][] = {};\r\nbool used[][] = {};\r\nq.push(P(i, j));\r\nused[i][j] = true;\r\nwhile (!q.empty()) {\r\n\tP now = q.front();\r\n\tq.pop();\r\n\tll a = now.first, b = now.second;\r\n\tREP(nxt, 4) {\r\n\t\tll x = now.first + v1[nxt], y = now.second + v2[nxt];\r\n\t\tif (0 > x or x >= h or 0 > y or y >= w or used[x][y]) continue;\r\n\t\t//if(s[x][y] == '#') continue;\r\n\t\tused[x][y] = true;\r\n\t\td[x][y] = d[a][b] + 1;\r\n\t\tq.push(P(x, y));\r\n\t}\r\n}",
+    "description": "bfs"
+  },
+  "bit": {
+    "prefix": "bit",
+    "body": "ll dat[1100010];\r\nvoid add(int x, ll a) {\r\n\tfor (ll i = x; i <= n; i += i & -i) dat[i] += a;\r\n}\r\n\r\nll sum(int x) {\r\n\tll res = 0;\r\n\tfor (int i = x; i > 0; i -= i & -i) res += dat[i];\r\n\treturn res;\r\n}",
+    "description": "bit"
+  },
+  "brainfuck": {
+    "prefix": "brainfuck",
+    "body": "void brainfuck(const string & p) {\r\n\tvector<int> x(65536);\r\n\tfor (int pc = 0, xc = 0, l = 0; pc < p.size(); ++pc) {\r\n\t\tif (p[pc] == '+') ++x[xc];\r\n\t\telse if (p[pc] == '-') --x[xc];\r\n\t\telse if (p[pc] == '.') putchar(x[xc]);\r\n\t\telse if (p[pc] == ',') x[xc] = getchar();\r\n\t\telse if (p[pc] == '>') ++xc;\r\n\t\telse if (p[pc] == '<') --xc;\r\n\t\telse if (p[pc] == '[') {\r\n\t\t\tif (!x[xc]) {\r\n\t\t\t\t++pc;\r\n\t\t\t\twhile (l > 0 || p[pc] != ']') {\r\n\t\t\t\t\tif (p[pc] == '[') ++l;\r\n\t\t\t\t\tif (p[pc] == ']') --l;\r\n\t\t\t\t\t++pc;\r\n\t\t\t\t}\r\n\t\t\t}\r\n\t\t}\r\n\t\telse if (p[pc] == ']') {\r\n\t\t\t--pc;\r\n\t\t\twhile (l > 0 || p[pc] != '[') {\r\n\t\t\t\tif (p[pc] == ']') ++l;\r\n\t\t\t\tif (p[pc] == '[') --l;\r\n\t\t\t\t--pc;\r\n\t\t\t}\r\n\t\t\t--pc;\r\n\t\t}\r\n\t}\r\n}",
+    "description": "brainfuck"
+  },
+  "ccin": {
+    "prefix": "ccin",
+    "body": "cin.tie(0);\r\nios::sync_with_stdio(false);",
+    "description": "ccin"
+  },
+  "cinfile": {
+    "prefix": "cinfile",
+    "body": "ifstream in(\"data.txt\");\r\ncin.rdbuf(in.rdbuf());",
+    "description": "cinfile"
+  },
+  "coutfile": {
+    "prefix": "coutfile",
+    "body": "ofstream out(\"out.txt\");\r\ncout.rdbuf(out.rdbuf());",
+    "description": "coutfile"
+  },
+  "dijkstra": {
+    "prefix": "ds",
+    "body": "ll d[210000]; // 結果\r\nstruct edge { ll to, cost; };\r\nvector<edge> g[210000]; //隣接リスト to, cost\r\nvoid dijkstra(ll a) { //だいくすとら！\r\n\tpriority_queue<P, vector<P>, greater<P> > q;\r\n\tfill(d, d + n, INF);\r\n\td[a] = 0;\r\n\tq.push(P(0, a));\r\n\twhile (!q.empty()) {\r\n\t\tP p = q.top();\r\n\t\tq.pop();\r\n\t\tll v = p.second;\r\n\t\tif (d[v] < p.first) continue;\r\n\t\tREP(i, g[v].size()) {\r\n\t\t\tedge e = g[v][i];\r\n\t\t\tif (d[e.to] > d[v] + e.cost) {\r\n\t\t\t\td[e.to] = d[v] + e.cost;\r\n\t\t\t\tq.push(P(d[e.to], e.to));\r\n\t\t\t}\r\n\t\t}\r\n\t}\r\n}",
+    "description": "dijkstra"
+  },
+  "era": {
+    "prefix": "era",
+    "body": "vector<ll> era(ll n) {\r\n\tvector<bool> ok(n + 1, true);\r\n\tok[0] = false;\r\n\tok[1] = false;\r\n\tvector<ll> res;\r\n\tfor (ll i = 2; i <= sqrt(n); ++i) {\r\n\t\tif (IsPrime(i)) {\r\n\t\t\tfor (ll j = i * i; j <= n; j += i) ok[j] = false;\r\n\t\t}\r\n\t}\r\n\tFOR(i, 2, n + 1)if (ok[i])res.push_back(i);\r\n\treturn res;\r\n}",
+    "description": "era"
+  },
+  "eudist": {
+    "prefix": "eudist",
+    "body": "double eudist(P a, P b) {\r\n\tdouble res = abs(a.first - b.first) * abs(a.first - b.first) + abs(a.second - b.second) * abs(a.second - b.second);\r\n\treturn sqrt(res);\r\n}\r\ndouble eudist(double x1, double y1, double x2, double y2) {\r\n\tdouble res = abs(x1 - x2) * abs(x1 - x2) + abs(y1 - y2) * abs(y1 - y2);\r\n\treturn sqrt(res);\r\n}",
+    "description": "eudist"
+  },
+  "gcd": {
+    "prefix": "gc",
+    "body": "ll gcd(ll a, ll b) {\r\n\treturn (b == 0 ? a : gcd(b, a % b));\r\n}",
+    "description": "gcd"
+  },
+  "lcm": {
+    "prefix": "lc",
+    "body": "ll lcm(ll a, ll b) {\r\n\treturn a / gcd(a, b) * b;\r\n}",
+    "description": "lcm"
+  },
+  "heimen": {
+    "prefix": "heimen",
+    "body": "ll v1[4] = { 0,0,1,-1 }, v2[4] = { 1,-1,0,0 };",
+    "description": "heimen"
+  },
+  "hld": {
+    "prefix": "hld",
+    "body": "struct HLD {//いつもの\r\n\tvector<ll> g[510000];\r\n\tvector<ll> sz, in, out, head, rev, par, dep; //rev = in -> index\r\n\tHLD(ll n) : sz(n), in(n), out(n), head(n), rev(n), par(n), dep(n) {};\r\n\tvoid dfs_sz(ll a, ll p, ll b) {\r\n\t\tpar[a] = p;\r\n\t\tsz[a] = 1;\r\n\t\tdep[a] = b;\r\n\t\tif (g[a].size() && g[a][0] == p) swap(g[a][0], g[a].back());\r\n\t\tfor (auto& to : g[a]) {\r\n\t\t\tif (to == p)continue;\r\n\t\t\tdfs_sz(to, a, b + 1);\r\n\t\t\tsz[a] += sz[to];\r\n\t\t\tif (sz[g[a][0]] < sz[to])swap(g[a][0], to);\r\n\t\t}\r\n\t}\r\n\tvoid dfs_hld(ll a, ll p, ll& t) {\r\n\t\tin[a] = t++;\r\n\t\trev[in[a]] = a;\r\n\t\tfor (auto& to : g[a]) {\r\n\t\t\tif (to == p)continue;\r\n\t\t\thead[to] = (g[a][0] == to ? head[a] : to);\r\n\t\t\tdfs_hld(to, a, t);\r\n\t\t}\r\n\t\tout[a] = t;\r\n\t}\r\n\tvoid edgeset(ll a, ll b) {\r\n\t\tg[a].push_back(b);\r\n\t\tg[b].push_back(a);\r\n\t}\r\n\tvoid build() {\r\n\t\tdfs_sz(0, -1, 0);\r\n\t\tll t = 0;\r\n\t\tdfs_hld(0, -1, t);\r\n\t}\r\n\tvoid input(ll n) {\r\n\t\tREP(i, n - 1) {\r\n\t\t\tll a, b;\r\n\t\t\tcin >> a >> b;\r\n\t\t\ta--; b--;\r\n\t\t\tedgeset(a, b);\r\n\t\t}\r\n\t\tbuild();\r\n\t}\r\n\tll la(ll a, ll x) {\r\n\t\twhile (1) {\r\n\t\t\tll h = head[a];\r\n\t\t\tif (in[a] - x >= in[h])return rev[in[a] - x];\r\n\t\t\tx -= in[a] - in[h] + 1;\r\n\t\t\ta = par[h];\r\n\t\t}\r\n\t}\r\n\tll lca(ll a, ll b) {\r\n\t\tfor (;; b = par[head[b]]) {\r\n\t\t\tif (in[a] > in[b])swap(a, b);\r\n\t\t\tif (head[a] == head[b])return a;\r\n\t\t}\r\n\t}\r\n\ttemplate< typename Q, typename F >\r\n\tll query(ll a, ll b, ll ti, const Q& q, const F& f, bool edge = false) {\r\n\t\tll l = ti, r = ti;\r\n\t\tfor (;; b = par[head[b]]) {\r\n\t\t\tif (in[a] > in[b])swap(a, b), swap(l, r);\r\n\t\t\tif (head[a] == head[b])break;\r\n\t\t\tl = f(q(in[head[b]], in[b] + 1), l);\r\n\t\t}\r\n\t\treturn f(f(q(in[a] + edge, in[b] + 1), l), r);\r\n\t}\r\n\ttemplate < typename Q >\r\n\tvoid addpath(ll a, ll b, ll x, const Q& q, bool edge = false) { //path\r\n\t\tfor (;; b = par[head[b]]) {\r\n\t\t\tif (in[a] > in[b])swap(a, b);\r\n\t\t\tif (head[a] == head[b])break;\r\n\t\t\tq(in[head[b]], in[b] + 1, x);\r\n\t\t}\r\n\t\treturn q(in[a] + edge, in[b] + 1, x);\r\n\t}\r\n\ttemplate < typename Q >\r\n\tvoid addst(ll a, ll x, const Q& q) { //subtree\r\n\t\tq(in[a], out[a], x);\r\n\t}\r\n};",
+    "description": "hld"
+  },
+  "ip": {
+    "prefix": "ip",
+    "body": "bool IsPrime(ll n) {\r\n\tif (n <= 1)return false;\r\n\tfor (ll i = 2; i <= sqrt(n); i++)\r\n\t{\r\n\t\tif (n % i == 0)return false;\r\n\t}\r\n\treturn true;\r\n}",
+    "description": "ip"
+  },
+  "kds": {
+    "prefix": "kds",
+    "body": "#define PP pair<ll, P>\r\nll d[110000][MAX]; // 結果\r\nstruct edge { ll to, cost; };\r\nvector<edge> g[110000]; //隣接リスト to, cost\r\n\r\nll solve_next(ll v, ll now) { //状態の遷移を書く\r\n\treturn v;\r\n}\r\nvoid dijkstra(ll a) { //すごいだいくすとら！\r\n\tpriority_queue<PP, vector<PP>, greater<PP> > q; // cost, to, 条件\r\n\tREP(i, n)fill(d[i], d[i] + MAX, INF);\r\n\r\n\td[a][init] = 0;\r\n\tq.push(PP(0, P(a, init)));\r\n\twhile (!q.empty()) {\r\n\t\tPP p = q.top();\r\n\t\tq.pop();\r\n\t\tll v = p.second.first, now = p.second.second;\r\n\t\tif (d[v][now] < p.first) continue;\r\n\t\tREP(i, g[v].size()) {\r\n\t\t\tedge e = g[v][i];\r\n\t\t\tll next = solve_next(v, now);\r\n\t\t\tif (d[e.to][next] > d[v][now] + e.cost) {\r\n\t\t\t\td[e.to][next] = d[v][now] + e.cost;\r\n\t\t\t\tq.push(PP(d[e.to][next], P(e.to, next)));\r\n\t\t\t}\r\n\t\t}\r\n\t}\r\n}",
+    "description": "kds"
+  },
+  "kruskal": {
+    "prefix": "kruskal",
+    "body": "struct Edge {\r\n\tint a, b, cost;\r\n\tbool operator<(const Edge& o) const {\r\n\t\treturn cost < o.cost;\r\n\t}\r\n};\r\n\r\nvector<Edge> es;  // 隣接リスト a, b, cost\r\n\r\nint kruskal() {\r\n\tsort(es.begin(), es.end());\r\n\tUnionFind uf(210000);\r\n\tint min_cost = 0;\r\n\tREP(ei, es.size()) {\r\n\t\tEdge& e = es[ei];\r\n\t\tif (!uf.findSet(e.a, e.b)) {\r\n\t\t\tmin_cost += e.cost;\r\n\t\t\tuf.unionSet(e.a, e.b);\r\n\t\t}\r\n\t}\r\n\treturn min_cost;\r\n}",
+    "description": "kruskal"
+  },
+  "lazyseg2": {
+    "prefix": "lazyseg2",
+    "body": "//つよいせぐつりー！(RUQ+RAQ)\r\nstruct LazySegTree { //参照は + sz - 1;\r\n\tll sz;\r\n\tvector<ll> node, lazy;\r\n\tvector<bool> lazyFlag;\r\n\tLazySegTree(ll n) {\r\n\t\tsz = 1;\r\n\t\twhile (sz < n) sz *= 2;\r\n\t\tnode.resize(2 * sz - 1);//\r\n\t\tlazy.resize(2 * sz - 1);//\r\n\t\tlazyFlag.resize(2 * sz - 1);\r\n\t}\r\n\tvoid eval(ll k, ll l, ll r) {\r\n\t\tif (lazyFlag[k]) {\r\n\t\t\tnode[k] = lazy[k];//\r\n\t\t\tif (r - l > 1) {\r\n\t\t\t\tlazy[2 * k + 1] = lazy[k] / 2;//\r\n\t\t\t\tlazy[2 * k + 2] = lazy[k] / 2;//\r\n\t\t\t\tlazyFlag[2 * k + 1] = lazyFlag[2 * k + 2] = true;\r\n\t\t\t}\r\n\t\t\tlazyFlag[k] = false;\r\n\t\t\tlazy[k] = 0;//\r\n\t\t}\r\n\t\telse {\r\n\t\t\tif (lazy[k] == 0)return;\r\n\t\t\tnode[k] += lazy[k];//\r\n\t\t\tif (r - l > 1) {\r\n\t\t\t\tlazy[2 * k + 1] += lazy[k] / 2;//\r\n\t\t\t\tlazy[2 * k + 2] += lazy[k] / 2;//\r\n\t\t\t}\r\n\t\t\tlazy[k] = 0;//\r\n\t\t}\r\n\t}\r\n\tvoid add(ll a, ll b, ll x, ll k = 0, ll l = 0, ll r = -1) {\r\n\t\tif (r < 0) r = sz;\r\n\t\teval(k, l, r);\r\n\t\tif (b <= l || r <= a) return;\r\n\t\tif (a <= l && r <= b) {\r\n\t\t\tlazy[k] += (r - l) * x;//\r\n\t\t\teval(k, l, r);\r\n\r\n\t\t}\r\n\t\telse {\r\n\t\t\tadd(a, b, x, 2 * k + 1, l, (l + r) / 2);\r\n\t\t\tadd(a, b, x, 2 * k + 2, (l + r) / 2, r);\r\n\t\t\tnode[k] = node[2 * k + 1] + node[2 * k + 2];//\r\n\t\t}\r\n\t}\r\n\tvoid update(ll a, ll b, ll x, ll k = 0, ll l = 0, ll r = -1) {\r\n\t\tif (r < 0) r = sz;\r\n\t\teval(k, l, r);\r\n\t\tif (b <= l || r <= a) return;\r\n\t\tif (a <= l && r <= b) {\r\n\t\t\tlazy[k] = (r - l) * x;//\t\r\n\t\t\tlazyFlag[k] = true;\r\n\t\t\teval(k, l, r);\r\n\r\n\t\t}\r\n\t\telse {\r\n\t\t\tupdate(a, b, x, 2 * k + 1, l, (l + r) / 2);\r\n\t\t\tupdate(a, b, x, 2 * k + 2, (l + r) / 2, r);\r\n\t\t\tnode[k] = node[2 * k + 1] + node[2 * k + 2];//\r\n\t\t}\r\n\t}\r\n    void add(ll a, ll x) {\r\n\t\tadd(a, a + 1, x);\r\n\t}\r\n\tvoid update(ll a, ll x) {\r\n\t\tupdate(a, a + 1, x);\r\n\t}\r\n\tll query(ll a, ll b, ll k = 0, ll l = 0, ll r = -1) {\r\n\t\tif (r < 0) r = sz;\r\n\t\teval(k, l, r);\r\n\t\tif (b <= l || r <= a) return 0;//\r\n\t\tif (a <= l && r <= b) return node[k];\r\n\t\tll vl = query(a, b, 2 * k + 1, l, (l + r) / 2);\r\n\t\tll vr = query(a, b, 2 * k + 2, (l + r) / 2, r);\r\n\t\treturn vl + vr;//\r\n\t}\r\n\tvoid init() {\r\n\t\tREPR(i, sz - 2) node[i] = node[2 * i + 1] + node[2 * i + 2];//\r\n\t}\r\n};",
+    "description": "lazyseg2"
+  },
+  "nibutan": {
+    "prefix": "nibutan",
+    "body": "bool solve(ll index, ll key) { //条件判定\r\n\tif (true) return true; //ここに条件を入れる\r\n\telse return false;\r\n}\r\n\r\nll nibutan(ll key = 0) { //ちゃろー！\r\n\r\n\tll ng = -1; //最大値ならs.size()\r\n\tll ok = (ll)s.size(); // 最大値なら0\r\n\r\n\twhile (abs(ok - ng) > 1) {\r\n\t\tll mid = (ok + ng) / 2;\r\n\r\n\t\tif (solve(mid, key)) ok = mid;\r\n\t\telse ng = mid;\r\n\t}\r\n\treturn ok; //満たさない最大ならng\r\n}",
+    "description": "nibutan"
+  },
+  "com": {
+    "prefix": "com",
+    "body": "ll f[210000];\r\nvoid cominit() {\r\n    f[0] = 1;\r\n    REP(i, 200000)f[i + 1] = f[i] * (i + 1) % MOD;\r\n}\r\n\r\nll nCr(ll n, ll r) {\r\n    if (n < r)return 0;\r\n    if (n < 0 or r < 0)return 0;\r\n    return f[n] * powmod(f[r] * f[n - r], MOD - 2) % MOD;\r\n}\r\n\r\nll nPr(ll n, ll r) {\r\n    if (n < r)return 0;\r\n    if (n < 0 or r < 0)return 0;\r\n    return f[n] * powmod(f[n - r], MOD - 2) % MOD;\r\n}\r\n\r\nll nHr(ll n, ll r) {\r\n    if (n < r)return 0;\r\n    if (n < 0 or r < 0)return 0;\r\n    return nCr(n + r - 1, r);\r\n}",
+    "description": "com"
+  },
+  "powmod": {
+    "prefix": "powmod",
+    "body": "ll powmod(ll a, ll b) {\r\n\ta %= MOD;\r\n\tll res = 1;\r\n\twhile (b > 0) {\r\n\t\tif (b % 2 == 1)res = res * a % MOD;\r\n\t\ta = a * a % MOD;\r\n\t\tb /= 2;\r\n\t}\r\n\treturn res;\r\n}",
+    "description": "powmod"
+  },
+  "qcfium": {
+    "prefix": "qcfium",
+    "body": "#pragma GCC target(\"avx2\")\r\n#pragma GCC optimize(\"O3\")\r\n#pragma GCC optimize(\"unroll-loops\")",
+    "description": "qcfium"
+  },
+  "scc": {
+    "prefix": "scc",
+    "body": "ll n;\r\nvector<ll> g[110000];\r\nvector<ll> rg[110000];\r\nvector<ll> vs;\r\nbool used[110000];\r\nll cmp[110000];\r\nvoid add_edge(ll from, ll to) {\r\n\tg[from].push_back(to);\r\n\trg[to].push_back(from);\r\n}\r\n\r\nvoid dfs(ll v) {\r\n\tused[v] = true;\r\n\tREP(i, g[v].size()) if (!used[g[v][i]]) dfs(g[v][i]);\r\n\tvs.push_back(v);\r\n}\r\n\r\nvoid rdfs(ll v, ll k) {\r\n\tused[v] = true;\r\n\tcmp[v] = k;\r\n\tREP(i, rg[v].size()) if (!used[rg[v][i]]) rdfs(rg[v][i], k);\r\n}\r\n\r\nll scc() {\r\n\tmemset(used, 0, sizeof(used));\r\n\tREP(i, n) if (!used[i])dfs(i);\r\n\tmemset(used, 0, sizeof(used));\r\n\tll k = 0;\r\n\tREPR(i, vs.size() - 1) if (!used[vs[i]]) rdfs(vs[i], k++);\r\n\treturn k;\r\n}",
+    "description": "scc"
+  },
+  "seg": {
+    "prefix": "seg",
+    "body": "struct SegTree { //せぐつりー！\r\n\tll sz;\r\n\tvector<ll> dat;\r\n\tSegTree(ll n) {\r\n\t\tsz = 1;\r\n\t\twhile (sz < n)sz *= 2;\r\n\t\tdat.resize(2 * sz - 1, INF);//\r\n\t}\r\n\tvoid update(ll a, ll x) {\r\n\t\ta += sz - 1;//\r\n\t\tdat[a] = x;\r\n\t\twhile (a > 0) {\r\n\t\t\ta = (a - 1) / 2;\r\n\t\t\tdat[a] = min(dat[a * 2 + 1], dat[a * 2 + 2]);//\r\n\t\t}\r\n\t}\r\n\tll query(ll a, ll b, ll k = 0, ll l = 0, ll r = -1) {\r\n\t\tif (r < 0) r = sz;\r\n\t\tif (r <= a or b <= l)return INF;//\r\n\t\tif (a <= l and r <= b)return dat[k];//\r\n\t\tll q1, q2;\r\n\t\tq1 = query(a, b, k * 2 + 1, l, (l + r) / 2);\r\n\t\tq2 = query(a, b, k * 2 + 2, (l + r) / 2, r);\r\n\t\treturn min(q1, q2);//\r\n\t}\r\n};",
+    "description": "seg"
+  },
+  "tsort": {
+    "prefix": "tsort",
+    "body": "//トポロジカルソート\r\nvector<ll> in(n), ans; // 答え\r\nqueue<ll> que;\r\n//入次数\r\nREP(i, n) { //隣接リストの長さ\r\n\tREP(j, g[i].size()) { //隣接リストの変数名\r\n\t\tin[g[i][j]]++;\r\n\t}\r\n}\r\nREP(i, n) if (in[i] == 0)que.push(i);\r\nwhile (!que.empty()) {\r\n\tll now = que.front();\r\n\tans.push_back(now);\r\n\tque.pop();\r\n\tREP(i, g[now].size()) {\r\n\t\tin[g[now][i]]--;\r\n\t\tif (in[g[now][i]] == 0) {\r\n\t\t\tque.push(g[now][i]);\r\n\t\t}\r\n\t}\r\n}",
+    "description": "tsort"
+  },
+  "uf": {
+    "prefix": "uf",
+    "body": "struct UnionFind {\r\n\tvector<int> data;\r\n\tUnionFind(int size) : data(size, -1) { }\r\n\tbool unionSet(int x, int y) {\r\n\t\tx = root(x); y = root(y);\r\n\t\tif (x != y) {\r\n\t\t\tif (data[y] < data[x]) swap(x, y);\r\n\t\t\tdata[x] += data[y]; data[y] = x;\r\n\t\t}\r\n\t\treturn x != y;\r\n\t}\r\n\tbool findSet(int x, int y) {\r\n\t\treturn root(x) == root(y);\r\n\t}\r\n\tint root(int x) {\r\n\t\treturn data[x] < 0 ? x : data[x] = root(data[x]);\r\n\t}\r\n\tint size(int x) {\r\n\t\treturn -data[root(x)];\r\n\t}\r\n};",
+    "description": "uf"
+  },
+  "winmain": {
+    "prefix": "winmain",
+    "body": "int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow)",
+    "description": "winmain"
+  },
+  "rfor": {
+    "prefix": "rfor",
+    "body": "for (auto& i : v) {\r\n\r\n}",
+    "description": "rfor"
+  },
+  "lazyseg": {
+    "prefix": "lazyseg\r",
+    "description": "lazyseg\r",
+    "body": [
+      "\r",
+      "struct LazySegTree { //参照は i + sz - 1 だよ～;\r",
+      "    ll sz;\r",
+      "    vector<ll> node, lazy;\r",
+      "    vector<bool> lazyFlag;\r",
+      "    LazySegTree(ll n) {\r",
+      "        sz = 1;\r",
+      "        while (sz < n) sz *= 2;\r",
+      "        node.resize(2 * sz - 1);//\r",
+      "        lazy.resize(2 * sz - 1);//\r",
+      "        lazyFlag.resize(2 * sz - 1);\r",
+      "    }\r",
+      "    void eval(ll k, ll l, ll r) {\r",
+      "        if (lazyFlag[k]) {\r",
+      "            node[k] += lazy[k];//\r",
+      "            if (r - l > 1) {\r",
+      "                lazy[2 * k + 1] += lazy[k] / 2;//\r",
+      "                lazy[2 * k + 2] += lazy[k] / 2;//\r",
+      "                lazyFlag[2 * k + 1] = lazyFlag[2 * k + 2] = true;\r",
+      "            }\r",
+      "            lazyFlag[k] = false;\r",
+      "            lazy[k] = 0;//\r",
+      "        }\r",
+      "    }\r",
+      "    void update(ll a, ll b, ll x, ll k = 0, ll l = 0, ll r = -1) {\r",
+      "        if (r < 0) r = sz;\r",
+      "        eval(k, l, r);\r",
+      "        if (b <= l || r <= a) return;\r",
+      "        if (a <= l && r <= b) {\r",
+      "            lazy[k] += (r - l) * x;//\r",
+      "            lazyFlag[k] = true;\r",
+      "            eval(k, l, r);\r",
+      "\r",
+      "        }\r",
+      "        else {\r",
+      "            update(a, b, x, 2 * k + 1, l, (l + r) / 2);\r",
+      "            update(a, b, x, 2 * k + 2, (l + r) / 2, r);\r",
+      "            node[k] = node[2 * k + 1] + node[2 * k + 2];//\r",
+      "        }\r",
+      "    }\r",
+      "    void update(ll a, ll x) {\r",
+      "        update(a, a + 1, x);\r",
+      "    }\r",
+      "    ll query(ll a, ll b, ll k = 0, ll l = 0, ll r = -1) {\r",
+      "        if (r < 0) r = sz;\r",
+      "        eval(k, l, r);\r",
+      "        if (b <= l || r <= a) return 0;//\r",
+      "        if (a <= l && r <= b) return node[k];\r",
+      "        ll vl = query(a, b, 2 * k + 1, l, (l + r) / 2);\r",
+      "        ll vr = query(a, b, 2 * k + 2, (l + r) / 2, r);\r",
+      "        return vl + vr;//\r",
+      "    }\r",
+      "    void init() {\r",
+      "        REPR(i, sz - 2) node[i] = node[2 * i + 1] + node[2 * i + 2];//\r",
+      "    }\r",
+      "};"
+    ]
+  }
+}

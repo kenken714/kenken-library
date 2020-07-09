@@ -90,14 +90,52 @@
     "description": "nibutan"
   },
   "com": {
-    "prefix": "com",
-    "body": "ll f[210000];\r\nvoid cominit() {\r\n    f[0] = 1;\r\n    REP(i, 200000)f[i + 1] = f[i] * (i + 1) % MOD;\r\n}\r\n\r\nll nCr(ll n, ll r) {\r\n    if (n < r)return 0;\r\n    if (n < 0 or r < 0)return 0;\r\n    return f[n] * powmod(f[r] * f[n - r], MOD - 2) % MOD;\r\n}\r\n\r\nll nPr(ll n, ll r) {\r\n    if (n < r)return 0;\r\n    if (n < 0 or r < 0)return 0;\r\n    return f[n] * powmod(f[n - r], MOD - 2) % MOD;\r\n}\r\n\r\nll nHr(ll n, ll r) {\r\n    if (n < r)return 0;\r\n    if (n < 0 or r < 0)return 0;\r\n    return nCr(n + r - 1, r);\r\n}",
-    "description": "com"
+    "prefix": "com\r",
+    "description": "com\r",
+    "body": [
+      "\r",
+      "ll f[210000];\r",
+      "void cominit(ll mod = 1e9+7) {\r",
+      "    f[0] = 1;\r",
+      "    REP(i, 200000)f[i + 1] = f[i] * (i + 1) % mod;\r",
+      "}\r",
+      "\r",
+      "ll nCr(ll n, ll r, ll mod = 1e9+7) {\r",
+      "    if (n < r)return 0;\r",
+      "    if (n < 0 or r < 0)return 0;\r",
+      "    return f[n] * powmod(f[r] * f[n - r], mod - 2) % mod;\r",
+      "}\r",
+      "\r",
+      "ll nPr(ll n, ll r, ll mod = 1e9+7) {\r",
+      "    if (n < r)return 0;\r",
+      "    if (n < 0 or r < 0)return 0;\r",
+      "    return f[n] * powmod(f[n - r], mod - 2) % mod;\r",
+      "}\r",
+      "\r",
+      "ll nHr(ll n, ll r, ll mod = 1e9+7) {\r",
+      "    if (n < r)return 0;\r",
+      "    if (n < 0 or r < 0)return 0;\r",
+      "    return nCr(n + r - 1, r);\r",
+      "}"
+    ]
   },
   "powmod": {
-    "prefix": "powmod",
-    "body": "ll powmod(ll a, ll b) {\r\n\ta %= MOD;\r\n\tll res = 1;\r\n\twhile (b > 0) {\r\n\t\tif (b % 2 == 1)res = res * a % MOD;\r\n\t\ta = a * a % MOD;\r\n\t\tb /= 2;\r\n\t}\r\n\treturn res;\r\n}",
-    "description": "powmod"
+    "prefix": "powmod\r",
+    "description": "powmod\r",
+    "body": [
+      "\r",
+      "\r",
+      "ll powmod(ll a, ll b, ll mod = 1e9+7) {\r",
+      "\ta %= mod;\r",
+      "\tll res = 1;\r",
+      "\twhile (b > 0) {\r",
+      "\t\tif (b % 2 == 1)res = res * a % mod;\r",
+      "\t\ta = a * a % mod;\r",
+      "\t\tb /= 2;\r",
+      "\t}\r",
+      "\treturn res;\r",
+      "}"
+    ]
   },
   "qcfium": {
     "prefix": "qcfium",

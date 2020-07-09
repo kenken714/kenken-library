@@ -93,7 +93,6 @@
     "prefix": "com\r",
     "description": "com\r",
     "body": [
-      "\r",
       "ll f[210000];\r",
       "void cominit(ll mod = 1e9+7) {\r",
       "    f[0] = 1;\r",
@@ -123,8 +122,6 @@
     "prefix": "powmod\r",
     "description": "powmod\r",
     "body": [
-      "\r",
-      "\r",
       "ll powmod(ll a, ll b, ll mod = 1e9+7) {\r",
       "\ta %= mod;\r",
       "\tll res = 1;\r",
@@ -153,14 +150,57 @@
     "description": "seg"
   },
   "tsort": {
-    "prefix": "tsort",
-    "body": "//トポロジカルソート\r\nvector<ll> in(n), ans; // 答え\r\nqueue<ll> que;\r\n//入次数\r\nREP(i, n) { //隣接リストの長さ\r\n\tREP(j, g[i].size()) { //隣接リストの変数名\r\n\t\tin[g[i][j]]++;\r\n\t}\r\n}\r\nREP(i, n) if (in[i] == 0)que.push(i);\r\nwhile (!que.empty()) {\r\n\tll now = que.front();\r\n\tans.push_back(now);\r\n\tque.pop();\r\n\tREP(i, g[now].size()) {\r\n\t\tin[g[now][i]]--;\r\n\t\tif (in[g[now][i]] == 0) {\r\n\t\t\tque.push(g[now][i]);\r\n\t\t}\r\n\t}\r\n}",
-    "description": "tsort"
+    "prefix": "tsort\r",
+    "description": "tsort\r",
+    "body": [
+      "vector<ll> in(n), ans; // 答え\r",
+      "queue<ll> que;\r",
+      "//入次数\r",
+      "REP(i, n) { //隣接リストの長さ\r",
+      "\tREP(j, g[i].size()) { //隣接リストの変数名\r",
+      "\t\tin[g[i][j]]++;\r",
+      "\t}\r",
+      "}\r",
+      "REP(i, n) if (in[i] == 0)que.push(i);\r",
+      "while (!que.empty()) {\r",
+      "\tll now = que.front();\r",
+      "\tans.push_back(now);\r",
+      "\tque.pop();\r",
+      "\tREP(i, g[now].size()) {\r",
+      "\t\tin[g[now][i]]--;\r",
+      "\t\tif (in[g[now][i]] == 0) {\r",
+      "\t\t\tque.push(g[now][i]);\r",
+      "\t\t}\r",
+      "\t}\r",
+      "}"
+    ]
   },
   "uf": {
-    "prefix": "uf",
-    "body": "struct UnionFind {\r\n\tvector<int> data;\r\n\tUnionFind(int size) : data(size, -1) { }\r\n\tbool unionSet(int x, int y) {\r\n\t\tx = root(x); y = root(y);\r\n\t\tif (x != y) {\r\n\t\t\tif (data[y] < data[x]) swap(x, y);\r\n\t\t\tdata[x] += data[y]; data[y] = x;\r\n\t\t}\r\n\t\treturn x != y;\r\n\t}\r\n\tbool findSet(int x, int y) {\r\n\t\treturn root(x) == root(y);\r\n\t}\r\n\tint root(int x) {\r\n\t\treturn data[x] < 0 ? x : data[x] = root(data[x]);\r\n\t}\r\n\tint size(int x) {\r\n\t\treturn -data[root(x)];\r\n\t}\r\n};",
-    "description": "uf"
+    "prefix": "uf\r",
+    "description": "uf\r",
+    "body": [
+      "struct UnionFind {\r",
+      "\tvector<int> data;\r",
+      "\tUnionFind(int size) : data(size, -1) { }\r",
+      "\tbool unionSet(int x, int y) {\r",
+      "\t\tx = root(x); y = root(y);\r",
+      "\t\tif (x != y) {\r",
+      "\t\t\tif (data[y] < data[x]) swap(x, y);\r",
+      "\t\t\tdata[x] += data[y]; data[y] = x;\r",
+      "\t\t}\r",
+      "\t\treturn x != y;\r",
+      "\t}\r",
+      "\tbool findSet(int x, int y) {\r",
+      "\t\treturn root(x) == root(y);\r",
+      "\t}\r",
+      "\tint root(int x) {\r",
+      "\t\treturn data[x] < 0 ? x : data[x] = root(data[x]);\r",
+      "\t}\r",
+      "\tint size(int x) {\r",
+      "\t\treturn -data[root(x)];\r",
+      "\t}\r",
+      "};"
+    ]
   },
   "winmain": {
     "prefix": "winmain",
@@ -176,7 +216,6 @@
     "prefix": "lazyseg\r",
     "description": "lazyseg\r",
     "body": [
-      "\r",
       "struct LazySegTree { //参照は i + sz - 1 だよ～;\r",
       "    ll sz;\r",
       "    vector<ll> node, lazy;\r",

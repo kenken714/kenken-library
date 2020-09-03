@@ -41,65 +41,91 @@ layout: default
 * :warning: <a href="library/macro.cpp.html">macro.cpp</a>
 
 
-<div id="dcfab7a28915543077d1e3e3e6bbe5ad"></div>
+<div id="6db66d7b1b7c3dfe9d9b1c6096e86908"></div>
 
-### src/data-str
+### data-str/segment
 
-* :warning: <a href="library/src/data-str/bit.cpp.html">src/data-str/bit.cpp</a>
-* :warning: <a href="library/src/data-str/lazyseg.cpp.html">src/data-str/lazyseg.cpp</a>
-* :warning: <a href="library/src/data-str/lazyseg2.cpp.html">src/data-str/lazyseg2.cpp</a>
-* :warning: <a href="library/src/data-str/seg.cpp.html">src/data-str/seg.cpp</a>
-* :warning: <a href="library/src/data-str/unionfind.cpp.html">src/data-str/unionfind.cpp</a>
-
-
-<div id="5442c8f317d712204bf06ed26672e17c"></div>
-
-### src/graph
-
-* :warning: <a href="library/src/graph/dijkstra.cpp.html">src/graph/dijkstra.cpp</a>
-* :warning: <a href="library/src/graph/ex_dijkstra.cpp.html">src/graph/ex_dijkstra.cpp</a>
-* :warning: <a href="library/src/graph/hld.cpp.html">src/graph/hld.cpp</a>
-* :warning: <a href="library/src/graph/kruskal.cpp.html">src/graph/kruskal.cpp</a>
-* :warning: <a href="library/src/graph/scc.cpp.html">src/graph/scc.cpp</a>
-* :warning: <a href="library/src/graph/topo_sort.cpp.html">src/graph/topo_sort.cpp</a>
+* :warning: <a href="library/data-str/segment/bit.cpp.html">data-str/segment/bit.cpp</a>
+* :warning: <a href="library/data-str/segment/lazyseg.cpp.html">data-str/segment/lazyseg.cpp</a>
+* :warning: <a href="library/data-str/segment/lazyseg2.cpp.html">data-str/segment/lazyseg2.cpp</a>
+* :warning: <a href="library/data-str/segment/seg.cpp.html">data-str/segment/seg.cpp</a>
 
 
-<div id="fb2ef479237c7a939531a404fd0e5cb7"></div>
+<div id="5d08f9aeacace5762dd6eb5cf85c25d1"></div>
 
-### src/math
+### data-str/unionfind
 
-* :warning: <a href="library/src/math/com.cpp.html">src/math/com.cpp</a>
-* :warning: <a href="library/src/math/eudist.cpp.html">src/math/eudist.cpp</a>
-* :warning: <a href="library/src/math/gcd.cpp.html">src/math/gcd.cpp</a>
-* :warning: <a href="library/src/math/isprime.cpp.html">src/math/isprime.cpp</a>
-* :warning: <a href="library/src/math/lcm.cpp.html">src/math/lcm.cpp</a>
-* :warning: <a href="library/src/math/powmod.cpp.html">src/math/powmod.cpp</a>
-* :warning: <a href="library/src/math/sieve_of_era.cpp.html">src/math/sieve_of_era.cpp</a>
+* :warning: <a href="library/data-str/unionfind/unionfind.cpp.html">data-str/unionfind/unionfind.cpp</a>
 
 
-<div id="6ac66477c69bbef458332953ecd7cbb0"></div>
+<div id="11d7325260d2fe77abd8dca04677cb88"></div>
 
-### src/other
+### graph/component
 
-* :warning: <a href="library/src/other/ccin.cpp.html">src/other/ccin.cpp</a>
-* :warning: <a href="library/src/other/cinfile.cpp.html">src/other/cinfile.cpp</a>
-* :warning: <a href="library/src/other/coutfile.cpp.html">src/other/coutfile.cpp</a>
-* :warning: <a href="library/src/other/heimen.cpp.html">src/other/heimen.cpp</a>
-* :warning: <a href="library/src/other/qcfium.cpp.html">src/other/qcfium.cpp</a>
-* :warning: <a href="library/src/other/rfor.cpp.html">src/other/rfor.cpp</a>
-* :warning: <a href="library/src/other/winmain.cpp.html">src/other/winmain.cpp</a>
+* :warning: <a href="library/graph/component/scc.cpp.html">graph/component/scc.cpp</a>
 
 
-<div id="e9fd3da3699d4799bc832d6181386d1b"></div>
+<div id="7bdf4bef6792afd2baf0aea42eec3899"></div>
 
-### src/other-algo
+### graph/other
 
-* :warning: <a href="library/src/other-algo/bfs.cpp.html">src/other-algo/bfs.cpp</a>
-* :warning: <a href="library/src/other-algo/nibutan.cpp.html">src/other-algo/nibutan.cpp</a>
+* :warning: <a href="library/graph/other/bfs.cpp.html">graph/other/bfs.cpp</a>
+* :warning: <a href="library/graph/other/kruskal.cpp.html">graph/other/kruskal.cpp</a>
+* :warning: <a href="library/graph/other/topo_sort.cpp.html">graph/other/topo_sort.cpp</a>
 
 
-## Verify Files
+<div id="0c95a70ca7e401d248a35bda820df083"></div>
 
-* :heavy_check_mark: <a href="verify/example.test.cpp.html">example.test.cpp</a>
+### graph/shotest
+
+* :warning: <a href="library/graph/shotest/dijkstra.cpp.html">graph/shotest/dijkstra.cpp</a>
+* :warning: <a href="library/graph/shotest/ex_dijkstra.cpp.html">graph/shotest/ex_dijkstra.cpp</a>
+
+
+<div id="28790b6202284cbbffc9d712b59f4b80"></div>
+
+### graph/tree
+
+* :warning: <a href="library/graph/tree/hld.cpp.html">graph/tree/hld.cpp</a>
+
+
+<div id="4893ec184ea00eb4228bfff1fec57eae"></div>
+
+### math/com
+
+* :warning: <a href="library/math/com/com.cpp.html">math/com/com.cpp</a>
+* :warning: <a href="library/math/com/eudist.cpp.html">math/com/eudist.cpp</a>
+* :warning: <a href="library/math/com/gcd.cpp.html">math/com/gcd.cpp</a>
+* :warning: <a href="library/math/com/isprime.cpp.html">math/com/isprime.cpp</a>
+* :warning: <a href="library/math/com/lcm.cpp.html">math/com/lcm.cpp</a>
+* :warning: <a href="library/math/com/powmod.cpp.html">math/com/powmod.cpp</a>
+* :warning: <a href="library/math/com/sieve_of_era.cpp.html">math/com/sieve_of_era.cpp</a>
+
+
+<div id="795f3202b17cb6bc3d4b771d8c6c9eaf"></div>
+
+### other
+
+* :warning: <a href="library/other/ccin.cpp.html">other/ccin.cpp</a>
+* :warning: <a href="library/other/cinfile.cpp.html">other/cinfile.cpp</a>
+* :warning: <a href="library/other/coutfile.cpp.html">other/coutfile.cpp</a>
+* :warning: <a href="library/other/heimen.cpp.html">other/heimen.cpp</a>
+* :warning: <a href="library/other/omajinai.cpp.html">other/omajinai.cpp</a>
+* :warning: <a href="library/other/rfor.cpp.html">other/rfor.cpp</a>
+* :warning: <a href="library/other/winmain.cpp.html">other/winmain.cpp</a>
+
+
+<div id="af417960dab45403316179de8d54f2fe"></div>
+
+### other-algo
+
+* :warning: <a href="library/other-algo/nibutan.cpp.html">other-algo/nibutan.cpp</a>
+
+
+<div id="dada0dcc232b029913f2cd4354c73c4b"></div>
+
+### test/AOJ
+
+* :warning: <a href="library/test/AOJ/DSL_1_A.cpp.html">test/AOJ/DSL_1_A.cpp</a>
 
 

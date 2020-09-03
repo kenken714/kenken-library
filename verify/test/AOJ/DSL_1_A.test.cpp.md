@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :warning: test/AOJ/DSL_1_A.cpp
+# :heavy_check_mark: test/AOJ/DSL_1_A.test.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
 * category: <a href="../../../index.html#dada0dcc232b029913f2cd4354c73c4b">test/AOJ</a>
-* <a href="{{ site.github.repository_url }}/blob/master/test/AOJ/DSL_1_A.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-09-04 02:19:59+09:00
+* <a href="{{ site.github.repository_url }}/blob/master/test/AOJ/DSL_1_A.test.cpp">View this file on GitHub</a>
+    - Last commit date: 2020-09-04 02:29:53+09:00
 
 
 * see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/1/DSL_1_A">https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/1/DSL_1_A</a>
@@ -39,8 +39,8 @@ layout: default
 
 ## Depends on
 
-* :warning: <a href="../../data-str/unionfind/unionfind.cpp.html">data-str/unionfind/unionfind.cpp</a>
-* :warning: <a href="../../macro.cpp.html">macro.cpp</a>
+* :heavy_check_mark: <a href="../../../library/data-str/unionfind/unionfind.cpp.html">data-str/unionfind/unionfind.cpp</a>
+* :heavy_check_mark: <a href="../../../library/macro.cpp.html">macro.cpp</a>
 
 
 ## Code
@@ -71,7 +71,7 @@ int main(){
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "test/AOJ/DSL_1_A.cpp"
+#line 1 "test/AOJ/DSL_1_A.test.cpp"
 #define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/1/DSL_1_A"
 
 #include <bits/stdc++.h>
@@ -111,7 +111,7 @@ struct UnionFind {
 		return -data[root(x)];
 	}
 };
-#line 6 "test/AOJ/DSL_1_A.cpp"
+#line 6 "test/AOJ/DSL_1_A.test.cpp"
 
 int main(){
     int n, q;

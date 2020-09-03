@@ -38,7 +38,7 @@ layout: default
 
 ### .
 
-* :warning: <a href="library/macro.cpp.html">macro.cpp</a>
+* :heavy_check_mark: <a href="library/macro.cpp.html">macro.cpp</a>
 
 
 <div id="6db66d7b1b7c3dfe9d9b1c6096e86908"></div>
@@ -55,7 +55,7 @@ layout: default
 
 ### data-str/unionfind
 
-* :warning: <a href="library/data-str/unionfind/unionfind.cpp.html">data-str/unionfind/unionfind.cpp</a>
+* :heavy_check_mark: <a href="library/data-str/unionfind/unionfind.cpp.html">data-str/unionfind/unionfind.cpp</a>
 
 
 <div id="11d7325260d2fe77abd8dca04677cb88"></div>
@@ -122,10 +122,8 @@ layout: default
 * :warning: <a href="library/other-algo/nibutan.cpp.html">other-algo/nibutan.cpp</a>
 
 
-<div id="dada0dcc232b029913f2cd4354c73c4b"></div>
+## Verify Files
 
-### test/AOJ
-
-* :warning: <a href="library/test/AOJ/DSL_1_A.cpp.html">test/AOJ/DSL_1_A.cpp</a>
+* :heavy_check_mark: <a href="verify/test/AOJ/DSL_1_A.test.cpp.html">test/AOJ/DSL_1_A.test.cpp</a>
 
 

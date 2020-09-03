@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#dada0dcc232b029913f2cd4354c73c4b">test/AOJ</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/AOJ/DSL_1_A.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-09-04 02:29:53+09:00
+    - Last commit date: 2020-09-04 02:36:43+09:00
 
 
 * see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/1/DSL_1_A">https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/1/DSL_1_A</a>
@@ -40,7 +40,7 @@ layout: default
 ## Depends on
 
 * :heavy_check_mark: <a href="../../../library/data-str/unionfind/unionfind.cpp.html">data-str/unionfind/unionfind.cpp</a>
-* :heavy_check_mark: <a href="../../../library/macro.cpp.html">macro.cpp</a>
+* :heavy_check_mark: <a href="../../../library/other/macro.cpp.html">other/macro.cpp</a>
 
 
 ## Code
@@ -51,7 +51,7 @@ layout: default
 #define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/1/DSL_1_A"
 
 #include <bits/stdc++.h>
-#include "../../macro.cpp"
+#include "../../other/macro.cpp"
 #include "../../data-str/unionfind/unionfind.cpp"
 
 int main(){
@@ -75,7 +75,7 @@ int main(){
 #define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/1/DSL_1_A"
 
 #include <bits/stdc++.h>
-#line 2 "macro.cpp"
+#line 2 "other/macro.cpp"
 using namespace std;
  
 #define REP(i, n) for (ll i = 0; i < n; i++)

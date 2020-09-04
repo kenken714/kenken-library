@@ -1,7 +1,7 @@
 #define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/1/DSL_1_A"
 
 #include <bits/stdc++.h>
-#include "../../other/macro.cpp"
+#include "../../template/template.cpp"
 #include "../../data-str/unionfind/unionfind.cpp"
 
 int main(){

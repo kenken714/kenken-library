@@ -1,6 +1,6 @@
 ll dat[1100010];
 void add(int x, ll a) {
-	for (ll i = x; i <= n; i += i & -i) dat[i] += a;
+	for (ll i = x; i <= 1000100; i += i & -i) dat[i] += a;
 }
 
 ll sum(int x) {

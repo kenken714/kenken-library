@@ -38,7 +38,7 @@ layout: default
 
 ### data-str/segment
 
-* :warning: <a href="library/data-str/segment/bit.cpp.html">data-str/segment/bit.cpp</a>
+* :heavy_check_mark: <a href="library/data-str/segment/bit.cpp.html">data-str/segment/bit.cpp</a>
 * :warning: <a href="library/data-str/segment/lazyseg.cpp.html">data-str/segment/lazyseg.cpp</a>
 * :warning: <a href="library/data-str/segment/lazyseg2.cpp.html">data-str/segment/lazyseg2.cpp</a>
 * :warning: <a href="library/data-str/segment/seg.cpp.html">data-str/segment/seg.cpp</a>
@@ -125,5 +125,6 @@ layout: default
 ## Verify Files
 
 * :heavy_check_mark: <a href="verify/test/AOJ/DSL_1_A.test.cpp.html">test/AOJ/DSL_1_A.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/AOJ/DSL_2_B.test.cpp.html">test/AOJ/DSL_2_B.test.cpp</a>
 
 

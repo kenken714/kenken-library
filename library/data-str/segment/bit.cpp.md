@@ -25,15 +25,20 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :warning: data-str/segment/bit.cpp
+# :heavy_check_mark: data-str/segment/bit.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
 * category: <a href="../../../index.html#6db66d7b1b7c3dfe9d9b1c6096e86908">data-str/segment</a>
 * <a href="{{ site.github.repository_url }}/blob/master/data-str/segment/bit.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-09-04 02:10:59+09:00
+    - Last commit date: 2020-09-04 22:05:40+09:00
 
 
+
+
+## Verified with
+
+* :heavy_check_mark: <a href="../../../verify/test/AOJ/DSL_2_B.test.cpp.html">test/AOJ/DSL_2_B.test.cpp</a>
 
 
 ## Code
@@ -43,7 +48,7 @@ layout: default
 ```cpp
 ll dat[1100010];
 void add(int x, ll a) {
-	for (ll i = x; i <= n; i += i & -i) dat[i] += a;
+	for (ll i = x; i <= 1000100; i += i & -i) dat[i] += a;
 }
 
 ll sum(int x) {
@@ -60,7 +65,7 @@ ll sum(int x) {
 #line 1 "data-str/segment/bit.cpp"
 ll dat[1100010];
 void add(int x, ll a) {
-	for (ll i = x; i <= n; i += i & -i) dat[i] += a;
+	for (ll i = x; i <= 1000100; i += i & -i) dat[i] += a;
 }
 
 ll sum(int x) {

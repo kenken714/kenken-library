@@ -103,7 +103,6 @@ layout: default
 * :warning: <a href="library/other/cinfile.cpp.html">other/cinfile.cpp</a>
 * :warning: <a href="library/other/coutfile.cpp.html">other/coutfile.cpp</a>
 * :warning: <a href="library/other/heimen.cpp.html">other/heimen.cpp</a>
-* :heavy_check_mark: <a href="library/other/macro.cpp.html">other/macro.cpp</a>
 * :warning: <a href="library/other/omajinai.cpp.html">other/omajinai.cpp</a>
 * :warning: <a href="library/other/rfor.cpp.html">other/rfor.cpp</a>
 * :warning: <a href="library/other/winmain.cpp.html">other/winmain.cpp</a>
@@ -114,6 +113,13 @@ layout: default
 ### other-algo
 
 * :warning: <a href="library/other-algo/nibutan.cpp.html">other-algo/nibutan.cpp</a>
+
+
+<div id="66f6181bcb4cff4cd38fbc804a036db6"></div>
+
+### template
+
+* :heavy_check_mark: <a href="library/template/template.cpp.html">template/template.cpp</a>
 
 
 ## Verify Files

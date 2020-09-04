@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: other/macro.cpp
+# :heavy_check_mark: template/template.cpp
 
 <a href="../../index.html">Back to top page</a>
 
-* category: <a href="../../index.html#795f3202b17cb6bc3d4b771d8c6c9eaf">other</a>
-* <a href="{{ site.github.repository_url }}/blob/master/other/macro.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-09-04 02:36:43+09:00
+* category: <a href="../../index.html#66f6181bcb4cff4cd38fbc804a036db6">template</a>
+* <a href="{{ site.github.repository_url }}/blob/master/template/template.cpp">View this file on GitHub</a>
+    - Last commit date: 2020-09-04 21:52:34+09:00
 
 
 
@@ -66,7 +66,7 @@ using namespace std;
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "other/macro.cpp"
+#line 1 "template/template.cpp"
 #include <bits/stdc++.h>
 using namespace std;
  

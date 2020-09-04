@@ -41,7 +41,7 @@ layout: default
 * :heavy_check_mark: <a href="library/data-str/segment/bit.cpp.html">data-str/segment/bit.cpp</a>
 * :warning: <a href="library/data-str/segment/lazyseg.cpp.html">data-str/segment/lazyseg.cpp</a>
 * :warning: <a href="library/data-str/segment/lazyseg2.cpp.html">data-str/segment/lazyseg2.cpp</a>
-* :warning: <a href="library/data-str/segment/seg.cpp.html">data-str/segment/seg.cpp</a>
+* :x: <a href="library/data-str/segment/seg.cpp.html">data-str/segment/seg.cpp</a>
 
 
 <div id="5d08f9aeacace5762dd6eb5cf85c25d1"></div>
@@ -119,12 +119,13 @@ layout: default
 
 ### template
 
-* :heavy_check_mark: <a href="library/template/template.cpp.html">template/template.cpp</a>
+* :question: <a href="library/template/template.cpp.html">template/template.cpp</a>
 
 
 ## Verify Files
 
 * :heavy_check_mark: <a href="verify/test/AOJ/DSL_1_A.test.cpp.html">test/AOJ/DSL_1_A.test.cpp</a>
+* :x: <a href="verify/test/AOJ/DSL_2_A.test.cpp.html">test/AOJ/DSL_2_A.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/AOJ/DSL_2_B.test.cpp.html">test/AOJ/DSL_2_B.test.cpp</a>
 
 

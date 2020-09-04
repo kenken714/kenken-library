@@ -25,21 +25,21 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: test/AOJ/DSL_1_A.test.cpp
+# :x: test/AOJ/DSL_2_A.test.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
 * category: <a href="../../../index.html#dada0dcc232b029913f2cd4354c73c4b">test/AOJ</a>
-* <a href="{{ site.github.repository_url }}/blob/master/test/AOJ/DSL_1_A.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-09-04 21:52:34+09:00
+* <a href="{{ site.github.repository_url }}/blob/master/test/AOJ/DSL_2_A.test.cpp">View this file on GitHub</a>
+    - Last commit date: 2020-09-04 22:40:20+09:00
 
 
-* see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/1/DSL_1_A">https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/1/DSL_1_A</a>
+* see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/2/DSL_2_A">https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/2/DSL_2_A</a>
 
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../../library/data-str/unionfind/unionfind.cpp.html">data-str/unionfind/unionfind.cpp</a>
+* :x: <a href="../../../library/data-str/segment/seg.cpp.html">data-str/segment/seg.cpp</a>
 * :question: <a href="../../../library/template/template.cpp.html">template/template.cpp</a>
 
 
@@ -48,21 +48,24 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/1/DSL_1_A"
+#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/2/DSL_2_A"
 
 #include <bits/stdc++.h>
 #include "../../template/template.cpp"
-#include "../../data-str/unionfind/unionfind.cpp"
+#include "../../data-str/segment/seg.cpp"
 
 int main(){
-    int n, q;
+    ll n, q;
     cin >> n >> q;
-    UnionFind uf(n);
+    SegTree seg(n);
     REP(i, q){
-        int a, b, c;
+        ll a, b, c;
         cin >> a >> b >> c;
-        if (a == 0) uf.unionSet(b, c);
-        if (a == 1) cout << uf.findSet(b, c) << endl;
+        if (a == 0) seg.update(b, c);
+        if (a == 1) {
+            ll res = seg.query(b, c + 1);
+            cout << (res == INF ? (1ll << 31) - 1 : res) << endl;
+        }
     }
 }
 ```
@@ -71,8 +74,8 @@ int main(){
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "test/AOJ/DSL_1_A.test.cpp"
-#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/1/DSL_1_A"
+#line 1 "test/AOJ/DSL_2_A.test.cpp"
+#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/2/DSL_2_A"
 
 #include <bits/stdc++.h>
 #line 2 "template/template.cpp"
@@ -89,39 +92,47 @@ using namespace std;
 #define ALL(n) n.begin(), n.end()
 #define MOD 1000000007
 #define P pair<ll, ll>
-#line 1 "data-str/unionfind/unionfind.cpp"
-struct UnionFind {
-	vector<int> data;
-	UnionFind(int size) : data(size, -1) { }
-	bool unionSet(int x, int y) {
-		x = root(x); y = root(y);
-		if (x != y) {
-			if (data[y] < data[x]) swap(x, y);
-			data[x] += data[y]; data[y] = x;
+#line 1 "data-str/segment/seg.cpp"
+struct SegTree { //せぐつりー！
+	ll sz;
+	vector<ll> dat;
+	SegTree(ll n) {
+		sz = 1;
+		while (sz < n)sz *= 2;
+		dat.resize(2 * sz - 1, INF);//
+	}
+	void update(ll a, ll x) {
+		a += sz - 1;//
+		dat[a] = x;
+		while (a > 0) {
+			a = (a - 1) / 2;
+			dat[a] = min(dat[a * 2 + 1], dat[a * 2 + 2]);//
 		}
-		return x != y;
 	}
-	bool findSet(int x, int y) {
-		return root(x) == root(y);
-	}
-	int root(int x) {
-		return data[x] < 0 ? x : data[x] = root(data[x]);
-	}
-	int size(int x) {
-		return -data[root(x)];
+	ll query(ll a, ll b, ll k = 0, ll l = 0, ll r = -1) {
+		if (r < 0) r = sz;
+		if (r <= a or b <= l)return INF;//
+		if (a <= l and r <= b)return dat[k];//
+		ll q1, q2;
+		q1 = query(a, b, k * 2 + 1, l, (l + r) / 2);
+		q2 = query(a, b, k * 2 + 2, (l + r) / 2, r);
+		return min(q1, q2);//
 	}
 };
-#line 6 "test/AOJ/DSL_1_A.test.cpp"
+#line 6 "test/AOJ/DSL_2_A.test.cpp"
 
 int main(){
-    int n, q;
+    ll n, q;
     cin >> n >> q;
-    UnionFind uf(n);
+    SegTree seg(n);
     REP(i, q){
-        int a, b, c;
+        ll a, b, c;
         cin >> a >> b >> c;
-        if (a == 0) uf.unionSet(b, c);
-        if (a == 1) cout << uf.findSet(b, c) << endl;
+        if (a == 0) seg.update(b, c);
+        if (a == 1) {
+            ll res = seg.query(b, c + 1);
+            cout << (res == INF ? (1ll << 31) - 1 : res) << endl;
+        }
     }
 }
 

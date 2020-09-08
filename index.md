@@ -34,6 +34,13 @@ layout: default
 
 ## Library Files
 
+<div id="b4d4587b4d59861af2d90d43b6d76fd9"></div>
+
+### data-str/convex_hull_trick
+
+* :warning: <a href="library/data-str/convex_hull_trick/li_chao_tree.cpp.html">data-str/convex_hull_trick/li_chao_tree.cpp</a>
+
+
 <div id="6db66d7b1b7c3dfe9d9b1c6096e86908"></div>
 
 ### data-str/segment

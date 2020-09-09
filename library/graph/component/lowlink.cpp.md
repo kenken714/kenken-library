@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#11d7325260d2fe77abd8dca04677cb88">graph/component</a>
 * <a href="{{ site.github.repository_url }}/blob/master/graph/component/lowlink.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-09-10 03:51:10+09:00
+    - Last commit date: 2020-09-10 04:45:06+09:00
 
 
 
@@ -47,7 +47,8 @@ struct LowLink{
     vector<P> bridge;
     vector<bool> used;
     LowLink(int n) : g(n){};
-
+    LowLink(vector<vector<int>> g) : g(g){};
+    
     void edgeset(int a, int b){
         g[a].push_back(b);
         g[b].push_back(a);
@@ -55,12 +56,12 @@ struct LowLink{
 
     void dfs(int v, int p, int &t){
         used[v] = true;
-        ord[v] = t++;
+        ord[v] = t++;   
         low[v] = ord[v];
-        bool ar = false;
+        bool ar = false, ck = false;
         int sub = 0;
         for (auto& i : g[v]) {
-            if (i == p) continue;
+            if (i == p and !exchange(ck, true)) continue;
             if(!used[i]){
                 dfs(i, v, t);
                 sub++;
@@ -99,7 +100,8 @@ struct LowLink{
     vector<P> bridge;
     vector<bool> used;
     LowLink(int n) : g(n){};
-
+    LowLink(vector<vector<int>> g) : g(g){};
+    
     void edgeset(int a, int b){
         g[a].push_back(b);
         g[b].push_back(a);
@@ -107,12 +109,12 @@ struct LowLink{
 
     void dfs(int v, int p, int &t){
         used[v] = true;
-        ord[v] = t++;
+        ord[v] = t++;   
         low[v] = ord[v];
-        bool ar = false;
+        bool ar = false, ck = false;
         int sub = 0;
         for (auto& i : g[v]) {
-            if (i == p) continue;
+            if (i == p and !exchange(ck, true)) continue;
             if(!used[i]){
                 dfs(i, v, t);
                 sub++;

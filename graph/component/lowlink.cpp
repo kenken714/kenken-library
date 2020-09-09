@@ -4,7 +4,8 @@ struct LowLink{
     vector<P> bridge;
     vector<bool> used;
     LowLink(int n) : g(n){};
-
+    LowLink(vector<vector<int>> g) : g(g){};
+    
     void edgeset(int a, int b){
         g[a].push_back(b);
         g[b].push_back(a);
@@ -12,12 +13,12 @@ struct LowLink{
 
     void dfs(int v, int p, int &t){
         used[v] = true;
-        ord[v] = t++;
+        ord[v] = t++;   
         low[v] = ord[v];
-        bool ar = false;
+        bool ar = false, ck = false;
         int sub = 0;
         for (auto& i : g[v]) {
-            if (i == p) continue;
+            if (i == p and !exchange(ck, true)) continue;
             if(!used[i]){
                 dfs(i, v, t);
                 sub++;

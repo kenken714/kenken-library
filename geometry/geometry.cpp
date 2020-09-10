@@ -123,8 +123,14 @@ bool intersect(const Circle &a, const Line &b){
     return sgn(distance(b, a.a) - a.r) == -1;
 }
 
-bool intersect(const Circle &a, const Segment &b){//TODO
-    return sgn(distance(b, a.a) - a.r) == -1;
+int intersect(const Circle &a, const Segment &b){
+    if (norm(projection(b, a.a) - a.a) - a.r * a.r > EPS) return 0;
+    auto d1 = abs(a.a - b.a), d2 = abs(a.a - b.b);
+    if (d1 < a.r + EPS and d2 < a.r + EPS) return 0;
+    if (d1 < a.r - EPS and d2 > a.r + EPS or d1 > a.r + EPS and d2 < a.r - EPS) return 1;
+    const Pt j = projection(b, a.a);
+    if (dot(b.a - j, b.b - j) < 0) return 2;
+    return 0;
 }
 
 int intersect(Circle a, Circle b){ //共通接線の数 ok
@@ -179,6 +185,14 @@ pair<Pt, Pt> crosspoint(const Circle &a, const Line &b){//ok
     if (!sgn(distance(b, a.a) - a.r)) return {pt, pt};
     double base = sqrt(a.r * a.r - norm(pt - a.a));
     return {pt - e * base, pt + e * base};
+}
+
+pair<Pt, Pt> crosspoint(const Circle &a, const Segment &b){
+    Line c = Line(b);
+    if (intersect(a, b) == 2) return crosspoint(a, c);
+    auto res = crosspoint(a, c);
+    if (dot(b.a - res.first, b.b - res.first) < 0) res.second = res.first;
+    return res;
 }
 
 bool is_convex(const Polygon &p){//ok
